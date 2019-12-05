@@ -24,7 +24,7 @@ You will need to install the following packages using the `install.packages("")`
 * tidyr 
 * dplyr 
 
-<h1 style="background-color:Tomato;">Tomato</h1>
+
 
 ## Step 2 - Downloading the dataset 
 
@@ -289,3 +289,12 @@ orchids <- orchids %>% mutate(ave_soil_pH = rowMeans(cbind(soil_ph1,soil_ph2,soi
 * [Data visualisation](https://ourcodingclub.github.io/2017/01/29/datavis.html) 
 
 
+
+<html>
+<body>
+
+<h2>HTML Image</h2>
+<img src="pic_trulli.jpg" alt="Trulli" width="500" height="333">
+
+</body>
+</html>
