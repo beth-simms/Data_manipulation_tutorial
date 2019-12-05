@@ -120,9 +120,17 @@ orchids <- orchids %>% select(site, year, sci_name, Common_Name_ACIMS, curr_larg
 
 We have now filtered the number of columns down from 37 to only 14! This will make it much easier and quicker to access the information relevent to the research question and save heaps of time! 
 
+## Step 5 - Thinking about long form data 
 
+Long data formatting ensures that all the variables are in columns, observations are in rows, and values are in cells. If we wanted to make our orchids dataframe ultre long form we could use the ```r gather()``` function to group the three soil pH observationsin to a "key" and "value" column.
 
-## Step 5 - A wee exploration of the Orchid data set
+```r 
+orchids <- gather(orchids, key = "soil_ph_sample", value = "soil_ph", contains('soil_ph')) 
+```
+
+However for simplicity and what we want to do later with this data set, we will leave this for now. 
+
+## Step 6 - A wee exploration of the Orchid data set
 
 We know how our variable columns changed in our data set as we specified which ones we would like, however the little number at the bottom left of the orchids data frame shows that the number of 'entries' has decreased. This suggests that the orchids dataset contains fewer sites than the origional rare plants data frame. Like in step 2, we can perform the `length()` and `unique()` functions on the orchids data frame, this will show   the changes in sites that are suspected to have occured.
 
@@ -137,7 +145,7 @@ There are only 283 sites in the orchids data frame, it makes sense that this num
 
 
 
-## Step 6 - Clean and arrange the data
+## Step 7 - Clean and arrange the data
 
 Take a quick scroll around the orchid dataframe and you will quickly notice that there are several different ways of indicating when no values were applicable, depending on which column the data is in. For example, non-applicable observations in the soil pH column were denoted by 'VNA' where as in the dom_tree_species column, values which were not applicable were denoted as 'NONE' or left as blank cells. This variety of ways to show the same scenario will complicate further investigation in to the data and so for now we will overwrite all non-applicable cells as `NA` . We will do this using the following code:
 
@@ -191,7 +199,7 @@ Now we have our official orchid data, we need to ensure it is in longform before
 
 
 
-## Step 7 - Ensure data are the correct class
+## Step 8 - Ensure data are the correct class
 
 There are 6 main "data types" in R, these distinguish the different forms that data can be recognised as, these data types are then later combined in to data structures such as data frames and matrices. It is important that R recognises each data point as the correct data type; for example in our orchids data set, the problem experienced at the end of the last step occured because the `parse_number()` function cannot be applied to the current class type of the Srank data.
 
@@ -262,7 +270,7 @@ is.numeric(orchids$soil_ph1) # Checking that the soil phs are now classed as num
 
 
 
-## Step 8 - Adding new columns
+## Step 9 - Adding new columns
 
 To understand what raw data sets show, especially large ones such as the orchids data set, it is often helpful to summarise findings across the many rows or columns. A way to provide in depth numerical studies is to create additional columns which draw observations from several columns and combine them in to a summative measure such as a mean value. 
 
