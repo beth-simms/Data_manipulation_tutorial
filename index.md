@@ -123,6 +123,10 @@ We have now filtered the number of columns down from 37 to only 14! This will ma
 
 Long data formatting ensures that all the variables are in columns, observations are in rows, and values are in cells. The image below provides a visual representation of what a tidy data set looks like. 
 
+
+<div class="block"><center><img src="{{ site.baseurl }}/user-images.githubusercontent.com/55789272/70276366-0f7cc080-17a8-11ea-9a2e-8a19aa8c9e3d.png" alt="Img"></center></div> 
+
+
 ![image](https://user-images.githubusercontent.com/55789272/70276366-0f7cc080-17a8-11ea-9a2e-8a19aa8c9e3d.png)
 
 Whilst our data frame toes follow this rule for most variables, the soil pH values could be gathered. If we wanted to make our orchids dataframe ultra long form we could use the ```r gather()``` function to group the three soil pH observationsin to a "key" and "value" column.
