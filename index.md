@@ -11,6 +11,7 @@ Data Manipulation is an effective way to sort through, organise and clear data s
 * To learn how to create a tidy data set. 
 * To learn how to explore, organise, sort through and draw relevent information from a large and messy data set. 
 
+<img src="pic_trulli.jpg" alt="Italian Trulli">
 
 ## Step 1 - Getting started 
 
