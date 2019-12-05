@@ -30,7 +30,7 @@ You will need to install the following packages using the `install.packages("")`
 
 Download the data from where you saved it on your computer using the file path followed by the file name.The first line shown below will load the data in to your environment, then the you can the use the 'View' function, shown on the second line, to display the data in a new window. 
 
-
+✏️
 ```r
 rare_plants <- read.csv("~/Downloads/YEAR_3/tutorial-beth-simms/Data/ABMI_Rare_Plants_2012-2015_Data (1).csv")
 View(rare_plants)
@@ -44,7 +44,7 @@ Now the dataset is downloaded, you will see from just scrolling around it that i
 
 ## Step 3 - Eyeballing the dataset
 
-Explore the premise of the data set, start with using the `head()` function, this will give you the name of the  columns and their first six entries. This will give you an idea of what sort of variables are compared and how many columns are in the dataset. 
+Explore the premise of the data set, start with using the `head()` function, this will display the name of the columns and their first six entries. This will give you an idea of what sort of variables are compared and how many columns are in the dataset. 
 
 
 :pencil2: 
@@ -63,15 +63,13 @@ length(unique(rare_plants$site)) # Shows the number of different sites sampled i
 ```
 
 
-The rare plants data set contains information recorded from the sampling of 610 sites!From our investigations, we can conclude that the rare plants data set contains A LOT of information. Here we must ask ourselves ... do we need it all? To answere this, we need to think back to our original research question : "How have the statuses and habitat preferences of the rare orchid species in Anthabasca region changed". This research question requires only a few sections of the rare_plants dataframe, so lets get manipulating!
+The rare plants data set contains information recorded from the sampling of 610 sites!From our investigations, we can conclude that the rare plants data set contains A LOT of information. Here we must ask ourselves ... do we need it all? To answer this, we need to think back to our original research question : "How have the statuses and habitat preferences of the rare orchid species in Anthabasca region changed". This research question requires only a few sections of the rare_plants dataframe, so lets get manipulating!
 
-
-On to Manipulating the data!
 
 
 ## Step 4 - Filter out the data of inetrest
 
-We will start this process by making a dataframe of just orchid observations, as this is the family of plants we   want to investigate . To do this we will use the `filter()` function. We will assign this to a new object, this             will create a new dataframe containing only observations of orchid species . 
+We will start this process by making a dataframe of just orchid observations, as this is the family of plants we want to investigate. To do this we will use the `filter()` function. We will assign this to a new object, this will create a new dataframe containing only observations of orchid species . 
 
 
 :pencil2: 
@@ -122,13 +120,13 @@ We have now filtered the number of columns down from 37 to only 14! This will ma
 
 ## Step 5 - Thinking about long form data 
 
-Long data formatting ensures that all the variables are in columns, observations are in rows, and values are in cells. If we wanted to make our orchids dataframe ultre long form we could use the ```r gather()``` function to group the three soil pH observationsin to a "key" and "value" column.
+Long data formatting ensures that all the variables are in columns, observations are in rows, and values are in cells. Whilst our data frame toes follow this rule for most variables, the soil pH values could be gathered. If we wanted to make our orchids dataframe ultra long form we could use the ```r gather()``` function to group the three soil pH observationsin to a "key" and "value" column.
 
 ```r 
 orchids <- gather(orchids, key = "soil_ph_sample", value = "soil_ph", contains('soil_ph')) 
 ```
 
-However for simplicity and what we want to do later with this data set, we will leave this for now. 
+However for simplicity and what we want to do later in this tutorial, we will leave this for now. 
 
 ## Step 6 - A wee exploration of the Orchid data set
 
