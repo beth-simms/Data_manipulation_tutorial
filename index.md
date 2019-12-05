@@ -24,26 +24,12 @@ You will need to install the following packages using the `install.packages("")`
 * tidyr 
 * dplyr 
 
+<h1 style="background-color:Tomato;">Tomato</h1>
 
 ## Step 2 - Downloading the dataset 
 
 Download the data from where you saved it on your computer using the file path followed by the file name.The first line shown below will load the data in to your environment, then the you can the use the 'View' function, shown on the second line, to display the data in a new window. 
 
-<!DOCTYPE html>
-<html>
-<style>
-body {
-  font-size: 20px;
-}
-</style>
-<body>
-
-<span style='font-size:100px;'>&#9999;</span>
-<p>I will display &#9999;</p>
-<p>I will display &#x270F;</p>
-
-</body>
-</html>
 
 ```r
 rare_plants <- read.csv("~/Downloads/YEAR_3/tutorial-beth-simms/Data/ABMI_Rare_Plants_2012-2015_Data (1).csv")
